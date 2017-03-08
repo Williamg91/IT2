@@ -8,7 +8,7 @@ public class Main {
     //Dvs klasserne
 
     public static void main(String[] args){
-
+//Standard fremgang til at lave en ramme.
         JFrame ramme = new JFrame("Brugergrænseflade");
 
     }
