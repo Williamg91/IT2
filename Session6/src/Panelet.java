@@ -11,27 +11,32 @@ import java.io.IOException;
  */
 public class Panelet extends JPanel {
 
-
+    BufferedImage bi = null;
     @Override
     public void paintComponents(Graphics g) {
         super.paintComponents(g);
-        tegnPenis(g);
+
+        try {
+            bi = ImageIO.read(new File("C:\\Users\\William\\IdeaProjects\\IT2\\Session6\\dix.png"));
+            g.drawImage(bi, 0, 0, null);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Fy fan!");
+        }
+
+        //tegnPenis(g);
+
     }
 
     //Bare for at vise hvordan du sætter et billede ind.
-    private void tegnPenis(Graphics g){
+    private void tegnPenis(Graphics g) {
         //metode til at tegne en pik midt i JPanel, lavet i paint.
         BufferedImage bi = null;
-        try{
-            bi = ImageIO.read(new File("C:\\Users\\William\\IdeaProjects\\SUSP1\\Session6\\dix.png"));
+        try {
+            bi = ImageIO.read(new File("C:\\Users\\William\\IdeaProjects\\IT2\\Session6\\dix.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        g.drawImage(bi, 0, 0, new ImageObserver() {
-            @Override
-            public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
-                return false;
-            }
-        });
+        g.drawImage(bi, 0, 0, null);
     }
 }

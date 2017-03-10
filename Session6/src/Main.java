@@ -10,12 +10,13 @@ public class Main {
     public static void main(String[] args) {
 //Standard fremgang til at lave en ramme.
         JFrame ramme = new JFrame("Brugergrænseflade");
-
-        ramme.setSize(700, 300);
-        ramme.setVisible(true);
-        //Ikke noget komplekst her, Bos slides leverer det samme.
-        ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JPanel panel = new Panelet();
         ramme.add(panel);
+        ramme.setSize(700, 300);
+
+        //Ikke noget komplekst her, Bos slides leverer det samme.
+        ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        ramme.setVisible(true);
+
     }
 }
