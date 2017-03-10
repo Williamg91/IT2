@@ -10,8 +10,10 @@ public class MainOne {
         JFrame ramme = new JFrame("Fyld mig op, kælling");
         ramme.setSize(700,300);
         ramme.setVisible(true);
+        GUI gui = new GUI();
+        ramme.add(gui);
         //Ikke noget komplekst her, Bos slides leverer det samme.
         ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
+
     }
 }
