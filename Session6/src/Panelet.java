@@ -13,7 +13,7 @@ public class Panelet extends JPanel {
 
     BufferedImage bi = null;
     @Override
-    public void paintComponents(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponents(g);
 
         try {

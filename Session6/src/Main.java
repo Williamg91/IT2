@@ -11,8 +11,9 @@ public class Main {
 //Standard fremgang til at lave en ramme.
         JFrame ramme = new JFrame("Brugergrænseflade");
         JPanel panel = new Panelet();
+        ramme.setSize(700, 500);
         ramme.add(panel);
-        ramme.setSize(700, 300);
+
 
         //Ikke noget komplekst her, Bos slides leverer det samme.
         ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
