@@ -7,13 +7,21 @@ public class MainOne {
 
     public static void main(String[] args){
 //laver ramme som jeg fylder med et Panel.
-        JFrame ramme = new JFrame("Fyld mig op, kælling");
-        ramme.setSize(700,300);
-        ramme.setVisible(true);
-        GUI gui = new GUI();
-        ramme.add(gui);
-        //Ikke noget komplekst her, Bos slides leverer det samme.
-        ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        setupFrame();
+        SensorMaster sens = new SensorMaster();
+        sens.simulateMeasurement();
+
+    }
+    static void setupFrame(){
+       Fyforden ramme = new Fyforden();
+
+       /*ramme.setSize(500,600);
+
+       ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+       ramme.setVisible(true);
+
+        ramme.add(new Fyforden());
+    */
     }
 }
