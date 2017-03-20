@@ -8,9 +8,12 @@ import java.awt.event.MouseEvent;
  * Created by William on 10-03-2017.
  */
 public class Control {
+    SensorMaster sens = new SensorMaster();
+    Timer times;
     //Styrer hvad vi tegner i vores TegnNoget-klasse. Dvs. panel-klassen er et værktøj, vi definerer. men Control
     //bestemmer hvordan det skal virke.
     GUI gui;
+
 
     public Control(GUI gui) {
         this.gui = gui;
@@ -22,9 +25,11 @@ public class Control {
     private void doInBackGround() {
         //Hvad skal der ske i baggrunden løbende? Måske en lille sensor, der skal opdateres?
 
-    }
+        }
+
 
     public void controlTempTextField(JTextField target, JLabel label) {
+        String labeltekst = label.getText();
 
         target.addMouseListener(new MouseAdapter() {
             @Override
@@ -42,7 +47,8 @@ public class Control {
             public void actionPerformed(ActionEvent e) {
                 double result = Double.parseDouble(target.getText());
                 System.out.println("parset værdi:" + result);
-                label.setText("Øvre grænse :" + result + " C");
+                String[] arr = labeltekst.split(" ", 1);
+                label.setText(arr[0] + result + " C");
 
             }
         });

@@ -1,38 +1,45 @@
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by William on 20-03-2017.
  */
 public class GUI extends JFrame {
 
-     JPanel mainPane;
-     JTextField maxTFelt;
-     JTextField minimumTFelt;
-     JTextField pulsmax;
-     JTextField pulsmin;
-     JCheckBox checkBox1;
-     JLabel ovrep;
-     JLabel nedreP;
-     JLabel ovreT;
-     JLabel nedreT;
-     JLabel dtutrademark;
-     JLabel nyesteT;
-     JLabel nyesteP;
-     JLabel alarmP;
-     JLabel alarmT;
+    JPanel mainPane;
+    JTextField maxTFelt;
+    JTextField minimumTFelt;
+    JTextField pulsmax;
+    JTextField pulsmin;
+    JCheckBox checkBox1;
+    JLabel ovrep;
+    JLabel nedreP;
+    JLabel ovreT;
+    JLabel nedreT;
+    JLabel dtutrademark;
+
+    JLabel alarmP;
+    JLabel alarmT;
     JLabel titellabel;
+    private JButton visTidligereDataButton;
+    private JButton plotNyesteDataButton;
 
     ImageIcon icon = new ImageIcon(getClass().getResource("DTU3.jpg"));
     Control control = new Control(this);
-//Stort set alt hvad der sker her, er ting, som sættes op når grænsefladen kører første gang. Dvs. det er en JFrame med et JPanel sat som skelet. Indholdet af det JPanel styres via Controller
+    JLabel nyesteT;
+
+    JLabel nyesteP;
+    //Stort set alt hvad der sker her, er ting, som sættes op når grænsefladen kører første gang. Dvs. det er en JFrame med et JPanel sat som skelet. Indholdet af det JPanel styres via Controller
 
     public GUI() {
-       setupFrame();
+        setupFrame();
 
         setupIcons();
-
+maxTFelt.setToolTipText("Temperatur som et decimal med et punktum, ikke komma, og tryk enter");
+minimumTFelt.setToolTipText("Temperatur som et decimal med et punktum, ikke komma, og tryk enter");
+pulsmin.setToolTipText("Indtast grænsen som et heltal og tryk enter");
+pulsmax.setToolTipText("Indtast grænsen som et heltal og tryk enter");
 
 
 
@@ -43,6 +50,18 @@ public class GUI extends JFrame {
         control.controlPulseTextField(pulsmin, nedreP);
 
 
+        visTidligereDataButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Fuck, den dovne udvikler har ikke lavet dette endnu");
+            }
+        });
+        plotNyesteDataButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Fuck, den dovne udvikler har ikke lavet dette endnu");
+            }
+        });
 
     }
 
@@ -56,19 +75,16 @@ public class GUI extends JFrame {
     }
 
 
-
-
-    private void setupIcons(){
+    private void setupIcons() {
         alarmP.setVisible(false);
         alarmT.setVisible(false);
         dtutrademark.setIcon(icon);
         dtutrademark.setText(null);
-        nyesteT.setIcon(new ImageIcon(getClass().getResource("a.png")));
+         nyesteT.setIcon(new ImageIcon(getClass().getResource("a.png")));
         nyesteT.setText("0 C");
-       nyesteP.setIcon(new ImageIcon(getClass().getResource("b.png")));
-       nyesteP.setText("  BPM");
+        nyesteP.setIcon(new ImageIcon(getClass().getResource("b.png")));
+        nyesteP.setText("  BPM");
     }
-
 
 
 }
