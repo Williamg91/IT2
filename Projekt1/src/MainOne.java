@@ -5,7 +5,8 @@ import javax.swing.*;
  */
 public class MainOne {
 
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
 //laver ramme som jeg fylder med et Panel.
 
         setupFrame();
@@ -13,15 +14,13 @@ public class MainOne {
         sens.simulateMeasurement();
 
     }
-    static void setupFrame(){
-       Fyforden ramme = new Fyforden();
 
-       /*ramme.setSize(500,600);
+    static void setupFrame() {
+        GUI ramme = new GUI();
+        Control cont = new Control(ramme);
 
-       ramme.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-       ramme.setVisible(true);
 
-        ramme.add(new Fyforden());
-    */
     }
+
+
 }

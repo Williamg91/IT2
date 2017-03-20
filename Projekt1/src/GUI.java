@@ -1,49 +1,74 @@
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
- * Created by William on 08-03-2017.
+ * Created by William on 20-03-2017.
  */
 public class GUI extends JFrame {
-    private JPanel panel1;
-    private JTextField maxTempTextField;
-    private JTextField temperaturMinTextField;
-    private JButton plotTidligereMålingerButton;
-    private JButton plotNyesteMålingerButton;
-    private JCheckBox shrekbox;
-    private JLabel pulslabel1;
-    private JLabel pulslabel2;
-    private JLabel pulsMin;
-    private JLabel pulsMax;
-    /*
-    I denne klasse sætter vi vores brugergrænseflade op. Det program, jeg anvender, har en GUI designer i stil med Netbeans, der bare er træk og slip.
-    Men, vi beskæftiger os ikke med at sætte grafen op i dette panel. Det bruger vi en separat tegneklasse til.
-     */
 
-    public GUI(){
-setContentPane(panel1);
-hidePulseComponents();
-        /*
-        Først skal vi tænke lidt over hvad der skal ske, når GUI initaliseres.
-         */
-//hidePulseComponents();
+     JPanel mainPane;
+     JTextField maxTFelt;
+     JTextField minimumTFelt;
+     JTextField pulsmax;
+     JTextField pulsmin;
+     JCheckBox checkBox1;
+     JLabel ovrep;
+     JLabel nedreP;
+     JLabel ovreT;
+     JLabel nedreT;
+     JLabel dtutrademark;
+     JLabel nyesteT;
+     JLabel nyesteP;
+     JLabel alarmP;
+     JLabel alarmT;
+    JLabel titellabel;
+
+    ImageIcon icon = new ImageIcon(getClass().getResource("DTU3.jpg"));
+    Control control = new Control(this);
+//Stort set alt hvad der sker her, er ting, som sættes op når grænsefladen kører første gang. Dvs. det er en JFrame med et JPanel sat som skelet. Indholdet af det JPanel styres via Controller
+
+    public GUI() {
+       setupFrame();
+
+        setupIcons();
+
+
+
+
+        control.controlTempTextField(maxTFelt, ovreT);
+        //Sætter et par listeners op til at modtage grænseintervaller fra bruger.
+        control.controlTempTextField(minimumTFelt, nedreT);
+        control.controlPulseTextField(pulsmax, ovrep);
+        control.controlPulseTextField(pulsmin, nedreP);
 
 
 
     }
 
-void hidePulseComponents(){
-        pulslabel1.setVisible(false);
-        pulslabel2.setVisible(false);
-        pulsMax.setVisible(false);
-        pulsMin.setVisible(false);
+    private void setupFrame() {
+        this.setContentPane(mainPane);
+        this.setVisible(true);
+        this.setSize(700, 400);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setTitle("Projekt 1: Puls og temperaturvisualisering");
+        this.setLocation(200, 300);
+    }
 
-        //This method is called as soon as the class is made, to hide the Pulse sensor functionality.
-    //
-}
+
+
+
+    private void setupIcons(){
+        alarmP.setVisible(false);
+        alarmT.setVisible(false);
+        dtutrademark.setIcon(icon);
+        dtutrademark.setText(null);
+        nyesteT.setIcon(new ImageIcon(getClass().getResource("a.png")));
+        nyesteT.setText("0 C");
+       nyesteP.setIcon(new ImageIcon(getClass().getResource("b.png")));
+       nyesteP.setText("  BPM");
+    }
+
 
 
 }
