@@ -11,11 +11,11 @@ public class SensorMaster implements Measurements {
     public double simulateMeasurement() {
         double res;
         Random r = new Random();
-        res = 36 + (38.2 - 36) * r.nextDouble();
-       // System.out.println("Målt temp:" + res);
-        DecimalFormat df = new DecimalFormat("#.##");
-        String re = df.format(res);
-        res = Double.parseDouble(re.replace(",","."));
+        res = 36.5 + (38.2 - 36.5) * r.nextDouble();
+        System.out.println("Målt temp:" + res);
+        DecimalFormat df = new DecimalFormat("##.##");
+        String re = df.format(res).replace(",",".");
+        res = Double.parseDouble(re);
 
         return res;
     }
