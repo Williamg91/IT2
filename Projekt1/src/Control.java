@@ -19,13 +19,10 @@ public class Control {
         this.gui = gui;
         togglePulseShow(false);
         tilfoejMouseListener();
-        doInBackGround();
+
     }
 
-    private void doInBackGround() {
-        //Hvad skal der ske i baggrunden løbende? Måske en lille sensor, der skal opdateres?
 
-        }
 
 
     public void controlTempTextField(JTextField target, JLabel label) {

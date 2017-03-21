@@ -16,8 +16,8 @@ public class MainOne {
     }
 
     static void setupFrame() {
-        GUI ramme = new GUI();
-        Control cont = new Control(ramme);
+       // GUI ramme = new GUI();
+        Control cont = new Control(new GUI());
 
 
     }
