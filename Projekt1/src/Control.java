@@ -153,6 +153,8 @@ public class Control {
     }
 
 
+
+
     public void updateLabel(JLabel target, int data) {
         target.setText("" + data);
     }
