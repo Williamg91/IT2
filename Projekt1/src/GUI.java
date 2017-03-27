@@ -27,7 +27,7 @@ public class GUI extends JFrame {
 
     private ImageIcon icon = new ImageIcon(getClass().getResource("DTU3.jpg"));
 
-   // Control control = new Control(this);
+    // Control control = new Control(this);
     JLabel nyesteT;
 
     JLabel nyesteP;
@@ -80,6 +80,13 @@ todo: Implementer database og graffunktion.
 */
 
 
+        plotNyesteDataButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              Control ctrl = new Control();
+                ctrl.tegnNuMinGraf();
+            }
+        });
     }
 //Kodning til at opdatere automatisk
 
