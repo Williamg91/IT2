@@ -13,7 +13,7 @@ public class MainOne {
 
         // Control cont = new Control(new GUI());
          Database data = new Database();
-
+data.skafNogetFraSQL(0,"data","t");
 
 
     }
