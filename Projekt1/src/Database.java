@@ -40,7 +40,7 @@ public class Database {
                 e1.printStackTrace();
                 System.out.println("jeg kan heller ikke finde mig selv :'(");
             }
-            e.printStackTrace();
+           // e.printStackTrace();
 
         }
     }
