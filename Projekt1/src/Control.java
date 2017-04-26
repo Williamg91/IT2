@@ -32,7 +32,7 @@ public class Control {
     XYSeries tempSerie = new XYSeries("Temperatur");
     //Lav bare en samling XY-data.
     XYSeries pulsSerie = new XYSeries("Puls");
-    XYDataset dataset;
+   // XYDataset dataset;
 
 
     public Control(GUI gui) {
@@ -48,6 +48,7 @@ public class Control {
         //opsætning for tekstfelter, så de fx. tømmes når jeg klikker på dem, eller parser når jeg trykker Enter.
 
         lavdataSaet();
+
         //Lav dataset, så jeg kan løbende fylde værdier ind i dem i baggrunden.
         controlTimer();
 
@@ -84,6 +85,7 @@ public class Control {
 
                 tempSerie.add(taeller, temperaturmaaling);
                 pulsSerie.add(taeller, pulsRandom);
+
                 //Slut på hvad der gøres løbende.
             }
         });
@@ -121,6 +123,7 @@ public class Control {
     void lavdataSaet() {
         dataset.addSeries(tempSerie);
         dataset.addSeries(pulsSerie);
+
         //Til vores samling med serier, kaldet dataset
 
         //Tilføj serien "temp"

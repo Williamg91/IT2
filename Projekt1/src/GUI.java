@@ -6,7 +6,10 @@ import java.awt.event.ActionListener;
  * Created by William on 20-03-2017.
  */
 public class GUI extends JFrame {
+/*
+Bemærk at i modsætning til normale attributter, er disse IKKE private, men de er heller ikke public. De skal kendes til af Control klassen, så den kan pille ved, eller tilføje Listeners til variable.
 
+ */
     JPanel mainPane;
     JTextField maxTFelt;
     JTextField minimumTFelt;
@@ -18,14 +21,12 @@ public class GUI extends JFrame {
     JLabel ovreT;
     JLabel nedreT;
     JLabel dtutrademark;
-
     JLabel alarmP;
     JLabel alarmT;
     JLabel titellabel;
-    private JButton visTidligereDataButton;
-    private JButton plotNyesteDataButton;
+     JButton visTidligereDataButton;
+     JButton plotNyesteDataButton;
 
-    private ImageIcon icon = new ImageIcon(getClass().getResource("DTU3.jpg"));
 
     // Control control = new Control(this);
     JLabel nyesteT;
@@ -35,32 +36,19 @@ public class GUI extends JFrame {
 
 
     public GUI() {
-        //Al koden til at bikse med dette her, rykker jeg nu over i en metode i Controller klassen, så den kan arbejde med GUI objektet.
-       /* timer = new Timer(3000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (startTime < 0) {
-                    startTime = System.currentTimeMillis();
-                }
-
-
-                sens.simulateMeasurement();
-                nyesteT.setText(sens.simulateMeasurement() + "C");
-            }
-        });
-        timer.setInitialDelay(0);
-        if (!timer.isRunning()) {
-            timer.start();
-        }*/
+      /*
+      Konstruktøren for GUI, som er en JFrame. Kort sagt, hvad skal der ske når jeg laver et objekt af GUI klassen?
+       */
 
         setupFrame();
-
+        //En lille metode, jeg skrev til at sætte opstarten for JFrame.
         setupIcons();
+        //Tilsvarende for ikoner, såsom Labels med billeder.
         maxTFelt.setToolTipText("Temperatur som et decimal med et punktum, ikke komma, og tryk enter");
         minimumTFelt.setToolTipText("Temperatur som et decimal med et punktum, ikke komma, og tryk enter");
         pulsmin.setToolTipText("Indtast grænsen som et heltal og tryk enter");
         pulsmax.setToolTipText("Indtast grænsen som et heltal og tryk enter");
-
+//Tooltips vises når musen holdes over det specifikke view.
 
 
 /*
@@ -79,6 +67,8 @@ todo: Implementer database og graffunktion.
         });
 */
 
+//Læg mærke til hvor LIDT logik der egentlig er i min grafiske brugergrænseflade. Der er "kun" statiske ting, men næsten ingen ActionListeners, fordi al reaktion sidder i controllerklassen.
+
 
         plotNyesteDataButton.addActionListener(new ActionListener() {
             @Override
@@ -88,7 +78,7 @@ todo: Implementer database og graffunktion.
             }
         });
     }
-//Kodning til at opdatere automatisk
+
 
 
     private void setupFrame() {
@@ -102,9 +92,13 @@ todo: Implementer database og graffunktion.
 
 
     private void setupIcons() {
+        /*
+        AlarmP og T er sat til false fra start af. Programmet skal jo ikke vise fejl, allerede ved start.
+         */
+
         alarmP.setVisible(false);
         alarmT.setVisible(false);
-        dtutrademark.setIcon(icon);
+        dtutrademark.setIcon(new ImageIcon(getClass().getResource("DTU3.jpg")));
         dtutrademark.setText(null);
         nyesteT.setIcon(new ImageIcon(getClass().getResource("a.png")));
 

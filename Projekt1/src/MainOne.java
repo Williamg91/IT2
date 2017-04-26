@@ -1,27 +1,18 @@
 import javax.swing.*;
 
-import org.jfree.chart.*;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.*;
-import org.jfree.data.general.Dataset;
-import org.jfree.data.xy.XYDataset;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.*;
-
 /**
  * Created by William on 08-03-2017.
  */
 public class MainOne {
 
-    static SensorMaster sens = new SensorMaster();
+   // static SensorMaster sens = new SensorMaster("COM3");
 
     public static void main(String[] args) {
 //laver ramme som jeg fylder med et Panel.
 
 
-        Control cont = new Control(new GUI());
-
+        // Control cont = new Control(new GUI());
+         Database data = new Database();
 
 
 
